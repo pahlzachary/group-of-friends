@@ -73,7 +73,8 @@ router.get("/campfire", (req, res) => {
       }
 
      console.log("MATCHRESDATA", matchResData);
-     res.render("Campfire");
+     res.render("Campfire")
+     //res.json(matchResData);
     })
 
     .catch((err) => {

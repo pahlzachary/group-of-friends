@@ -8,6 +8,7 @@ body, html {
   margin: 0;
   color: #855723;
   background-color: rgb(1, 1, 34);
+  font-family: 'Racing Sans One';
 }
 
 a {
@@ -98,6 +99,11 @@ form label {
   display: block;
 }
 
+label {
+  font-size: 15px;
+  color: #a3adb8;
+}
+
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -138,10 +144,7 @@ main {
   margin-left: 16px;
 }
 
-.btn-no-style:hover {
-  background: none;
-  color: #3486eb;
-}
+
 
 .delete-post-btn {
   background-color: #d41414;
