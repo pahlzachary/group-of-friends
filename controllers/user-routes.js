@@ -59,6 +59,7 @@ router.get("/campfire", (req, res) => {
     order: Sequelize.literal("rand()"),
     limit: 1,
   })
+
     .then((matchResData) => {
 
       if (!matchResData) {
@@ -66,14 +67,15 @@ router.get("/campfire", (req, res) => {
         res
           .status(404)
           .json({
-            message: `You've visted all the campfires in your area.  Check back later for new content!`,
+            message: `You've visited all the campfires in your area.  Check back later for new content!`,
           });
         return;
       }
 
-      console.log("MATCHRESDATA", matchResData);
-      res.render("campfire");
+     console.log("MATCHRESDATA", matchResData);
+     res.render("Campfire");
     })
+
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

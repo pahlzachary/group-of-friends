@@ -13,7 +13,12 @@ body, html {
 a {
   text-decoration: none;
   color: #225ca3;
+  font-size: 20px;
 
+}
+
+.navbar-brand {
+  background: rgba(255, 255, 255, 0);
 }
 
 .name {
@@ -67,14 +72,14 @@ button {
   padding: 0;
 }
 
-textarea, input {
+input {
   padding: .5%;
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: rgb(255, 255, 255, 35%);
 }
 
-textarea:focus, input:focus {
+input:focus {
   outline: none;
   border: 1px solid #668d3c;
   background-color: rgb(255, 255, 255, 35%);
@@ -171,25 +176,6 @@ main {
   background-color: #1f9c13;
 }
 
-.comment-form {
-  margin-bottom: 5%;
-}
-
-.comment {
-  padding: 1%;
-  margin-bottom: 1%;
-}
-
-.comment:nth-child(odd) {
-  background-color: #fff5eb;
-}
-
-.comment .meta {
-  font-size: 90%;
-  margin-bottom: .5%;
-  opacity: .6;
-}
-
 .new-post-form input {
   width: 300px;
 }
@@ -198,10 +184,10 @@ main {
   margin-bottom: 5%;
 }
 
-footer {
+/* footer {
   border-top: 1px solid #ccc;
   display: flex;
   justify-content: center;
   padding: 1%;
-  font-size: 110%;
-}
+  font-size: 110%; */
+
