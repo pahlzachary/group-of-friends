@@ -1,3 +1,5 @@
+//TODO: What's this logic for?
+
 const { json } = require("sequelize/types")
 
 const yesMatch = (event) => {

@@ -1,20 +1,25 @@
 const router = require("express").Router();
-const { User, Match, Group } = require("../../models");
+
+const { User, Match, Campfire } = require("../../models");
 const withAuth = require("../../utils/auth");
-//Need to add withAuth later
+//TODO: Need to add withAuth later
 
 //create a group
 router.post("/", (req, res) => {
-  Group.create({
+  Campfire.create({
     group_name: req.body.group_name,
-    group_email: req.body.group_email,
+    group_email: req.session.email,
     group_location: req.body.group_location,
     activity_title: req.body.activity_title,
     activity_description: req.body.activity_description,
     activity_date: req.body.activity_date,
     open_slots: req.body.open_slots,
+    creating_user_id: req.body.creating_user_id
   })
-    .then((dbGroupData) => res.json(dbGroupData))
+    .then(dbGroupData => {
+      console.log('GROUP DATA', dbGroupData);
+      res.json(dbGroupData);
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -24,7 +29,7 @@ router.post("/", (req, res) => {
 //read all group's info
 //TODO: not sure if we need to pull all group info for app functionality.
 router.get("/", (req, res) => {
-  Group.findAll({
+  Campfire.findAll({
     //exclude any info?
     // include: [
     //   {
@@ -46,8 +51,9 @@ router.get("/", (req, res) => {
 
 //read 1 specific group's info
 //TODO: We can use this when we add search functionality for a specific group.
+//TODO: TESTED AND WORKING
 router.get("/:id", (req, res) => {
-  Group.findOne({
+  Campfire.findOne({
     where: { id: req.params.id },
     // include: [
     //   {
@@ -75,8 +81,9 @@ router.get("/:id", (req, res) => {
 
 //update and edit group
 router.put("/:id", (req, res) => {
-  Group.update(
-      //needs review - not sure correct
+  Campfire.update(
+      //TODO: needs review - not sure correct
+      //Campfire.create is not generating an id?
     {
       group_name: req.body.group_name,
       group_email: req.body.group_email,
@@ -107,7 +114,7 @@ router.put("/:id", (req, res) => {
 
 //delete Group
 router.delete('/:id', (req, res) => {
-    Group.destroy({
+    Campfire.destroy({
       where: {
         id: req.params.id
       }
@@ -124,5 +131,7 @@ router.delete('/:id', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+
 
 module.exports = router;
