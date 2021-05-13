@@ -11,13 +11,13 @@ router.get("/dashboard", (req, res) => {
       user_id: req.session.user_id,
     },
   }).then((userMatchData) => {
-    //const userData = userMatchData.get({ plain: true });
+    const userData = userMatchData.get({ plain: true });
     const loggedIn = req.session.loggedIn;
-    console.log('MATCH DATA', userMatchData);
+    console.log('MATCH DATA', userData);
 
     if (loggedIn) {
       res.render("dashboard", {
-        userMatchData,
+        userData,
         loggedIn: req.session.loggedIn,
         username: req.session.username,
       });
