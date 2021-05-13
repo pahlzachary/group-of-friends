@@ -60,6 +60,7 @@ router.get("/campfire", (req, res) => {
     limit: 1,
   })
 
+  
     .then((matchResData) => {
 
       if (!matchResData) {
@@ -70,8 +71,10 @@ router.get("/campfire", (req, res) => {
             message: `You've visited all the campfires in your area.  Check back later for new content!`,
           });
         return;
+       
       }
 
+    var matchResData = {};
      console.log("MATCHRESDATA", matchResData);
      res.render("Campfire")
      //res.json(matchResData);

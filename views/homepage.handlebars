@@ -1,33 +1,10 @@
-<ul class="group-list">
-  {{#if loggedOut }}
-  {{#each groups as |group|}}
+<div class = "center align">
+<h1> Welcome to Campfire!</h1>
 
-  <li>
-    {{> group-info group }}
-  </li>
-  {{/each}}
-  {{/if}}
-</ul>
-
-<ul class="single-group">
-{{#if loggedIn}}
-<li>
-  
-  {{> group-info singleGroup}} 
-
-  {{!-- singlegroup and userid needs to come from controller --}}
-
-</li>
-<button class="yes" id="yes-btn" data-groupId = {{singleGroup.id}} data-userId = {{userId}} value = {{group_id}}>✅</button>
-<button class= "no" id="no-btn" value = {{group_id}}>❌</button>
-</ul>
-
-<p class= "email" style = "display:none">
-{{singleGroup.email}}
-</p>
-
-{{/if}}
-
-{{#if loggedIn}}
-<script src="/javascript/match.js"></script>
-{{/if}}
+<p>Campfire allows users to browse through and create groups based on their needs and interests.</p>
+<p>Need a last minute fill in for your basketball game?</p>
+<p class = "campfire" >Try Campfire!</p>
+<p>Want to try D&D but don't know anyone who plays?</p>
+<p class = "campfire">Try Campfire! </p>
+<h4>Get registered today!</h4>
+</div>
