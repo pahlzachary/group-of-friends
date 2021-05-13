@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-//Create Group Model
+//Create Campfire Model
 class Campfire extends Model {}
 
 //Define tables

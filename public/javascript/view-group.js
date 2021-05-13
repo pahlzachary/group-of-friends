@@ -2,7 +2,7 @@
 async function matchGroupHandler(event){
      event.preventDefault();
      let group_id = event.target.value
-     let user_id = req.session.id
+     let user_id = req.session.user_id
 
      const response = await fetch(`/api/matches`, {
           method: 'POST',
@@ -27,7 +27,7 @@ async function matchGroupHandler(event){
 async function notMatchGroupHandler(event){
      event.preventDefault();
      let group_id = event.target.value
-     let user_id = req.session.id
+     let user_id = req.session.user_id
 
      const response = await fetch(`/api/matches`, {
           method: 'POST',

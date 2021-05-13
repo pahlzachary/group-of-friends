@@ -1,0 +1,41 @@
+<div class="row">
+     <h2 class="text-white center-align">
+          Start a Campfire!
+     </h2>
+</div>
+<div class="row">
+     <div class="col s4 offset-s4 white-text">
+          <form class="campfire-form">
+               <div>
+                    <label for="group-name">Group Name:</label>
+                    <input type="text" id="group-name" class="white-text" />
+               </div>
+               <div>
+                    <label for="group-location">ZIP Code for Campfire: </label>
+                    <input type="text" id="group-location" class="white-text" />
+               </div>
+               <div>
+                    <label for="activity-date">Activity Date: </label>
+                    <input type="text" class="white-text" id="activity-date" />
+               </div>
+               <div>
+                    <label for="open-slots">How many people do you need to find?</label>
+                    <input type="text" id="open-slots" class="white-text" />
+               </div>
+               <div>
+                    <label for="activity-title">Activity Title: </label>
+                    <input type="text" id="activity-title" class="white-text" />
+               </div>
+               <div>
+                    <label for="activity-description">Describe what you're doing!</label>
+                    <input type="text" id="activity-description" class="white-text" />
+               </div>
+               <div class = "center-align">
+                    <button id="campfire-submit-btn" value={{user_id}}>Submit</button>
+               </div>
+
+          </form>
+     </div>
+</div>
+
+<script src="/javascript/create.js"></script>

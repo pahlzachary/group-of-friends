@@ -5,37 +5,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campfire🔥</title>
-  <link href ='https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee+Shade&family=Racing+Sans+One&display=swap'>
+  <link rel="stylesheet" href ='https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee+Shade&family=Racing+Sans+One&display=swap'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-  <div class="wrapper">
     <header>
-      <h1>
-        <a class="name" href="/">Campfire</a>
-      </h1>
-      <nav>
-        {{#if loggedIn}}
-        <button id = "logout" class = 'btn-no-style'>logout</button>
-        <a href='/dashbaord'> {{username}}</a>
-        {{else}}
-        <a href = '/login'>login</a>
-        {{/if}}
+      <nav class="navbar-brand">
+          <div class="nav-wrapper">
+            <a class="name" href="/dashboard">Campfire</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              {{#if loggedIn}}
+              <li><button class="white-text" id="logout">Logout</button></li>
+              {{/if}}
+              {{#unless loggedIn}}
+              <li><a href='/login'>Login</a></li>
+              {{/unless}}
+            </ul>
+            
+        </div>
       </nav>
     </header>
     <main>
-      {{{ body }}}
+      <div class="container">
+        {{{ body }}}
+      </div> 
     </main>
     <footer>
       
     </footer>
-  </div>
 
 {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
 </body>
 
 </html>

@@ -14,18 +14,10 @@ Match.init(
 
           user_id: {
                type: DataTypes.INTEGER,
-               // references: {
-               //      model: 'user',
-               //      key: 'id'
-               // }
           },
 
           group_id: {
                type: DataTypes.INTEGER,
-               // references: {
-               //      model: 'group',
-               //      key: 'id'
-               // }
           },
 
           matched: {

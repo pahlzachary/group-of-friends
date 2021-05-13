@@ -2,6 +2,8 @@ const Users = require('./Users');
 const Match = require('./Match');
 const Campfire = require('./Campfire');
 
+//TODO: Refine associations to pull campfires based on Match table
+//TODO: Refine associations to pull users based on Match table
 //create associations
 //User can match with more than one group
 //TODO: this is breaking table generation
@@ -20,7 +22,7 @@ Campfire.hasMany(Match, {
      foreignKey: 'id'
 });
 
-//Need to match with more than 1 Campfire
+ //Need to match with more than 1 Campfire
 // Campfire.belongsToMany(Match, {
 //      foreignKey: 'group_id'
 // });
