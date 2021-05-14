@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Match extends Model {}
+class Matches extends Model {}
 
-Match.init(
+Matches.init(
      {
           id: {
                type: DataTypes.INTEGER,
@@ -14,10 +14,18 @@ Match.init(
 
           user_id: {
                type: DataTypes.INTEGER,
+               references: {
+                    model: 'users',
+                    key: 'id'
+               }
           },
 
           group_id: {
                type: DataTypes.INTEGER,
+               references: {
+                    model: 'campfire',
+                    key: 'id'
+               }
           },
 
           matched: {
@@ -29,8 +37,8 @@ Match.init(
           timestamps: false,
           freezeTableName: true,
           underscored: true,
-          modelName: 'match',
+          modelName: 'matches',
      }
 );
 
-module.exports = Match;
+module.exports = Matches;

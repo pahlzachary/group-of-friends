@@ -55,7 +55,6 @@ router.post("/login", (req, res) => {
   });
 });
 
-//TODO: untested
 //user logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {

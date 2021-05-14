@@ -1,2 +1,36 @@
+<div class="row">
+  <div class="col s3">
+      <button class="choice-button left-align" id="no-btn" data-userId="{{user_id}}" data-groupId="{{matchData.id}}"> 
+           <i class="large material-icons" style="font-size : 15vw; color:red">close</i>
+      </button>
+  </div>
+  <div class="col s6">
+    <ul>
+      <li class="campfire-list">Group Name:
+        <span class="white-text">{{matchData.group_name}}</span>
+      </li>
+     <br />
+      <li class="campfire-list">Activity Title:
+        <span class="white-text">{{matchData.activity_title}}</span>
+      </li>
+     <br />
+      <li class="campfire-list">Happening On:
+        <span class="white-text">{{matchData.activity_date}}</span>
+      </li>
+      <br />
+      <li class="campfire-list">Needs
+        <span class="white-text">{{matchData.open_slots}} </span>people
+      </li>
+      <br />
+      <li class="campfire-list">Description:
+        <span class="white-text">{{matchData.activity_description}}</span></li>
+    </ul>
+  </div>
+  <div class="col s3">
+      <button class="choice-button right-align" id="yes-btn" data-userId="{{user_id}}" data-groupId="{{matchData.id}}">
+           <i class="material-icons" style="font-size: 15vw; color:green">check_circle</i>
+      </button>
+  </div>
+</div>
 
-
+<script src="/javascript/view-group.js"></script>

@@ -1,15 +1,22 @@
+let yesButton = document.querySelector('#yes-btn');
+let noButton = document.querySelector('#no-btn')
 //Run query to update matches table when user clicks match
 async function matchGroupHandler(event){
      event.preventDefault();
-     let group_id = event.target.value
-     let user_id = req.session.user_id
+      
+     let groupId = yesButton.getAttribute('data-groupId');
+     let userId = yesButton.getAttribute('data-userId');
+     let matched = true;
 
-     const response = await fetch(`/api/matches`, {
+     console.log('group id', groupId);
+     console.log('user id', userId);
+
+     const response = await fetch(`/api/groups/campfire`, {
           method: 'POST',
           body: JSON.stringify({
-               group_id,
-               user_id,
-               match: true
+               groupId,
+               userId,
+               matched
           }),
           headers: {
                'Content-Type': 'application/json'
@@ -26,15 +33,16 @@ async function matchGroupHandler(event){
 //Run query to update matches table when user clicks no
 async function notMatchGroupHandler(event){
      event.preventDefault();
-     let group_id = event.target.value
-     let user_id = req.session.user_id
+     let groupId = noButton.getAttribute('data-groupId');
+     let userId = noButton.getAttribute('data-userId');
+     let matched = false;
 
-     const response = await fetch(`/api/matches`, {
+     const response = await fetch(`/api/groups/campfire`, {
           method: 'POST',
           body: JSON.stringify({
-               group_id,
-               user_id,
-               match: false
+               groupId,
+               userId,
+               matched
           }),
           headers: {
                'Content-Type': 'application/json'
@@ -52,10 +60,10 @@ async function notMatchGroupHandler(event){
      //Simply reload page if route is configured to randomly select a group where matches.match = null
      //Otherwise we'll have to figure out some logic here
 function generateCampfire(){
-     location.reload();
+     document.location.replace('campfire');
 };
 
 
 //Event listeners
-document.querySelector('#yes-btn').addEventListener('click', matchGroupHandler);
-document.querySelector('#no-btn').addEventListener('click', notMatchGroupHandler);
+yesButton.addEventListener('click', matchGroupHandler);
+noButton.addEventListener('click', notMatchGroupHandler);

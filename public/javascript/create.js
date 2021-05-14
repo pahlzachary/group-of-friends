@@ -39,12 +39,9 @@ submitButton.addEventListener('click', function(event){
           }
      })
      .then(response => {
-          debugger;
           if (response.ok) {
-          console.log('OK RESPONSE', response);
           location.replace('/dashboard');
      } else {
-          console.log('BAD RESPONSE', response);
           alert(response.statusText);
      }
      })
