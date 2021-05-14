@@ -3,12 +3,20 @@
           <h2 class="text-white">Your Matched Campfires</h2>
      </div>
 </div>
+{{#each groupInfo}}
 <div class="row">
      <div class="col s12 center-align">
-          <h3 class="text-white">{{campfire.group_name}}, {{campfire.activity_title}}</h3>
-          <p class="text-white">{{campfire.activity_date}}</p>
-          <p class="text-white">{{campfire.group_location}}</p>
+          <h3 class="text-white">{{this.group_name}}, {{this.activity_title}}</h3>
+          <p class="text-white">{{this.activity_date}}</p>
+          <p class="text-white">{{this.group_location}}</p>
           <br />
-          <p class="text-white">{{campfire.activity_description}}</p>
+          <p class="text-white">{{this.activity_description}}</p>
      </div>
 </div>
+{{else}}
+<div class="row">
+     <div class="col s12">
+          <p class="text-white">No matches yet.</p>
+     </div>
+</div>
+{{/each}}

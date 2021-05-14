@@ -9,11 +9,6 @@ const Campfire = require('./Campfire');
 //      constraints: false
 // })
 
-//Groups will have more than 1 match
-// Campfire.hasMany(Match, {
-//      foreignKey: 'id'
-// });
-
 //Users create the Campfires
 Campfire.belongsTo(Users, {
      foreignKey: 'creating_user_id'
