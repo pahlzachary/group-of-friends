@@ -60,6 +60,8 @@ router.get("/campfire", (req, res) => {
       Sequelize.fn( 'RAND' ),
     ]
   })
+
+  
     .then((matchResData) => {
       
       
@@ -68,18 +70,22 @@ router.get("/campfire", (req, res) => {
         res
           .status(404)
           .json({
-            message: `You've visted all the campfires in your area.  Check back later for new content!`,
+            message: `You've visited all the campfires in your area.  Check back later for new content!`,
           });
         return;
+       
       }
       const user_id = req.session.user_id;
       const matchData = matchResData.get({ plain: true });
       const loggedIn = req.session.loggedIn;
 
+
       console.log('user_id', user_id);
       res.render('campfire', { matchData, user_id, loggedIn });
       //res.json(matchResData);
+
     })
+
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
