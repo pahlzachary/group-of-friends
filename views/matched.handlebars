@@ -7,10 +7,10 @@
 <div class="row">
      <div class="col s12 center-align">
           <h3 class="text-white">{{this.group_name}}, {{this.activity_title}}</h3>
-          <p class="text-white">{{this.activity_date}}</p>
-          <p class="text-white">{{this.group_location}}</p>
-          <br />
-          <p class="text-white">{{this.activity_description}}</p>
+          <p class="text-white group-email">Contact Info: {{this.group_email}}<p>
+          <p class="text-white">Activity Date: {{format_date this.activity_date}}</p>
+          <p class="text-white">Activity Location: {{this.group_location}}</p>
+          <p class="text-white">Description: {{this.activity_description}}</p>
      </div>
 </div>
 {{else}}

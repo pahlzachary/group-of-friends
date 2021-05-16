@@ -4,7 +4,7 @@
            <i class="large material-icons" style="font-size : 15vw; color:red">close</i>
       </button>
   </div>
-  <div class="col s6">
+  <div class="col s6 center align">
     <ul>
       <li class="campfire-list">Group Name:
         <span class="white-text">{{matchData.group_name}}</span>
@@ -15,7 +15,7 @@
       </li>
      <br />
       <li class="campfire-list">Happening On:
-        <span class="white-text">{{matchData.activity_date}}</span>
+        <span class="white-text">{{format_date matchData.activity_date}}</span>
       </li>
       <br />
       <li class="campfire-list">Needs
