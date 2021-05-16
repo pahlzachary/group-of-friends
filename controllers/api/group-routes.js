@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const { User, Match, Campfire } = require("../../models");
+const { User, Matches, Campfire } = require("../../models");
 const withAuth = require("../../utils/auth");
 //TODO: Need to add withAuth later
 
@@ -82,8 +82,6 @@ router.get("/:id", (req, res) => {
 //update and edit group
 router.put("/:id", (req, res) => {
   Campfire.update(
-      //TODO: needs review - not sure correct
-      //Campfire.create is not generating an id?
     {
       group_name: req.body.group_name,
       group_email: req.body.group_email,
@@ -132,6 +130,21 @@ router.delete('/:id', (req, res) => {
       });
   });
 
-
+//match a group
+router.post('/campfire', (req, res) => {
+  Matches.create({
+    user_id: req.body.userId,
+    group_id: req.body.groupId,
+    matched: req.body.matched
+  })
+  .then(matchData => {
+    console.log('post match data', matchData),
+    res.json(matchData);
+  })
+  .catch(err=> {
+    console.log(err);
+    res.status(500).json(err);
+  })
+});
 
 module.exports = router;

@@ -5,16 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campfire🔥</title>
-  <link href ='https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee+Shade&family=Racing+Sans+One&display=swap'>
+  <link rel="stylesheet" href ='https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee+Shade&family=Racing+Sans+One&display=swap'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
     <header>
-      <nav class="indigo darken-4">
+      <nav class="navbar-brand">
           <div class="nav-wrapper">
-            <a class="name brand-logo" href="/dashboard">Campfire</a>
+            <a class="name" href="/dashboard">Campfire</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               {{#if loggedIn}}
               <li><button class="white-text" id="logout">Logout</button></li>
@@ -23,6 +24,7 @@
               <li><a href='/login'>Login</a></li>
               {{/unless}}
             </ul>
+            
         </div>
       </nav>
     </header>

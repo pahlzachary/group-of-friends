@@ -3,20 +3,19 @@
       <h2 class="text-white">Your Campfires</h2>
     </div>
 
-{{#if groups.length}}
-{{each group}}
+{{#each campfires}}
     <div class="col s12 center-align">
-      <h3 class="text-white">Name: {{group_name}}</h3>
-      <p class="text-white">Title: {{activity_title}}</p>
-      <p class="text-white">Date: {{activity_date}}</p>
-      <p class="text-white">Open spaces: {{open_slots}}</p>
+      <h3 class="text-white">Name: {{this.group_name}}</h3>
+      <p class="text-white">Title: {{this.activity_title}}</p>
+      <p class="text-white">Date: {{format_date this.activity_date}}</p>
+      <p class="text-white">Open spaces: {{this.open_slots}}</p>
       <br />
-      <p class="text-white">{{activity_description}}</p>
+      <p class="text-white">{{this.activity_description}}</p>
     </div>
 {{else}}
      <div class="col s12 center-align">
           <h3 class="text-white">No Campfires created yet.</h3>
      </div>
-{{/if}}
+{{/each}}
 
   </div>
